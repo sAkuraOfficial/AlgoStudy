@@ -13,9 +13,9 @@ template <typename T>
 class linked_list
 {
 private:
-    ListNode<T> *first=nullptr;
-    ListNode<T> *last=nullptr;
-    int node_count=0;
+    ListNode<T> *first = nullptr;
+    ListNode<T> *last = nullptr;
+    int node_count = 0;
 
 public:
     ListNode<T> *get_first() { return first; }
@@ -183,7 +183,7 @@ public:
         try
         {
             ListNode<T> *temp = first;
-            for (int i = 0; i < node_count; i++,temp=temp->next)
+            for (int i = 0; i < node_count; i++, temp = temp->next)
             {
                 if (temp->val == x)
                 {
@@ -213,6 +213,9 @@ public:
 
 int main()
 {
+    system("chcp 65001");
+
+
     linked_list<int> list;
 
     // 插入元素
@@ -229,7 +232,7 @@ int main()
 
     // 测试插入和删除
     list.insert(2, 15); // 在索引2处插入15
-    list.remove(3);     // 删除索引3处的元素
+    list.remove(3); // 删除索引3处的元素
 
     std::cout << "After insertion and deletion:" << std::endl;
     for (int i = 0; i < list.get_count(); i++)
@@ -254,6 +257,9 @@ int main()
         std::cout << " " << i;
     }
     std::cout << std::endl;
+
+    std::cout << "测试方括号重载list[1]:" << list[1]<<std::endl;
+    std::cout << "测试方括号重载list[2]:" << list[2]<<std::endl;
 
     return 0;
 }
